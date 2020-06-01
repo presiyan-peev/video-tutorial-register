@@ -3,12 +3,14 @@
 export default {
     state: {
         // user: { username: "bai", password: "tosho", enrolledCourses: [], roles: ["user", "admin"] }
-        user: null
+        user: {
+            roles: []
+        }
     },
     getters: {
         getUser: (state) => state.user,
-        isLoggedIn: (state) => state.user !== null,
-        isAdmin: (state) => state.user.roles.containes("admin")
+        isLoggedIn: (state) => state.user.roles.length > 0,
+        isAdmin: (state) => state.user.roles.includes("admin")
     },
     mutations: {
       
