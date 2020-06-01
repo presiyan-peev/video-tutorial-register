@@ -12,13 +12,17 @@ Vue.use(VueRouter)
     name: 'Home',
     component: Home
   },
+  { 
+    path: '/home', 
+    redirect: '/' 
+  },
   {
-    path: '/',
+    path: '/login',
     name: 'Login',
     component: Login
   },
   {
-    path: '/',
+    path: '/register',
     name: 'Register',
     component: Register
   },
