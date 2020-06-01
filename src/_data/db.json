@@ -1,0 +1,11 @@
+{
+    "users": [
+        { "username": "bai", "password": "tosho", "enrolledCourses": [], "roles": [] }
+    ],
+    "courses": [
+        { "title": "Angular", "description": "Loremipsum", "imageUrl": "image.jpg", "isPublic": false, "lectures": [], "usersEnrolled": [] }
+    ],
+    "lectures": [
+        { "title": "Introduction", "videoUrl": "video.mp4", "course": "Angular" }
+    ]
+  }
