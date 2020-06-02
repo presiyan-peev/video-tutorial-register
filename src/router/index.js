@@ -10,11 +10,8 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
-    component: Home
-  },
-  { 
-    path: '/home', 
-    redirect: '/' 
+    component: Home,
+    alias: '/home'
   },
   {
     path: '/login',
