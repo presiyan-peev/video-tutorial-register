@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/public/Home.vue'
 import Login from '../views/public/Login.vue'
 import Register from '../views/public/Register.vue'
+import CreateCourse from '../views/admins/CreateCourse.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ Vue.use(VueRouter)
     path: '/register',
     name: 'Register',
     component: Register
+  },
+  {
+    path: '/create-course',
+    name: 'CreateCourse',
+    component: CreateCourse
   },
   {
     path: '/about',

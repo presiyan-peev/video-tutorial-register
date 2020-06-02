@@ -6,9 +6,9 @@
     </div>
 
     <div class="coursesList" v-if="getAllCourses.length>0">
-        <div class="coursesListTitle mt-12 mb-2 display-1 d-flex justify-center">
+        <Title>
             Choose course
-        </div>
+        </Title>
         <v-card
             class="courseListContent mx-12"
             tile
@@ -38,20 +38,25 @@
         </v-card>
     </div>
     <div class="emptyCoursesList" v-else>
-        <div class="coursesListTitle mt-12 mb-2 display-1 d-flex justify-center">
+        <Title>
             No courses in database. Please create one!
-        </div>
+        </Title>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import Title from '@/components/helpers/Title.vue'
 
 import { mapGetters } from 'vuex'
 
 export default {
     name: 'HomeAdmin',
+
+    components: {
+        Title,
+    },
 
     computed: {
     ...mapGetters([
