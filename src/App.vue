@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import AppBarGuest from "@/components/appbar/AppBarGuest"
+import AppBarGuest from "@/components/AppBarGuest"
 
 export default {
   name: 'App',

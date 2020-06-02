@@ -1,15 +1,15 @@
 <template>
   <div class="register">
-    <RegisterGuest />
+    <RegisterComponent />
   </div>
 </template>
 
 <script>
-import RegisterGuest from "@/components/registerpage/RegisterGuest.vue";
+import RegisterComponent from "@/components/RegisterComponent.vue";
 export default {
   name: "Register",
   components: {
-    RegisterGuest
+    RegisterComponent
   },
 };
 </script>

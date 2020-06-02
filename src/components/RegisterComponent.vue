@@ -1,5 +1,5 @@
 <template>
-  <div class="registerGuest">
+  <div class="RegisterComponent">
     <v-row>
         <v-col cols="0" sm="3" md="3">
         </v-col>
@@ -36,7 +36,7 @@
 <script>
 export default {
     // https://www.codeply.com/p/hBkZaWgmnk
-  name: 'RegisterGuest',
+  name: 'RegisterComponent',
 computed: {
     passwordMatch() {
       return () => this.password === this.verify || "Password must match";
