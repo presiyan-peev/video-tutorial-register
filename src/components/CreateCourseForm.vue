@@ -14,7 +14,7 @@
                                 <v-text-field v-model="courseTitle" :rules="[rules.required]" label="Course Title" maxlength="20" required></v-text-field>
                             </v-col>
                             <v-col cols="12">
-                                <v-textarea v-model="coursDesc" :rules="[rules.required]" label="Course Description" maxlength="50" required></v-textarea>
+                                <v-textarea v-model="courseDesc" :rules="[rules.required]" label="Course Description" maxlength="50" required></v-textarea>
                             </v-col>
                             <v-col cols="12">
                                 <v-text-field v-model="courseImg" :rules="[rules.required]" label="Image url" maxlength="100" required></v-text-field>

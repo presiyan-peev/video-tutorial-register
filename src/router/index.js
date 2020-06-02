@@ -3,7 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/public/Home.vue'
 import Login from '../views/public/Login.vue'
 import Register from '../views/public/Register.vue'
+
 import CreateCourse from '../views/admins/CreateCourse.vue'
+import EditCourse from '../views/admins/EditCourse.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +30,11 @@ Vue.use(VueRouter)
     path: '/create-course',
     name: 'CreateCourse',
     component: CreateCourse
+  },
+  {
+    path: '/edit-course/:title',
+    name: 'EditCourse',
+    component: EditCourse
   },
   {
     path: '/about',

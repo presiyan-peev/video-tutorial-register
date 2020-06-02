@@ -1,21 +1,21 @@
 <template>
   <div class="appBarLeftButtons">
     <v-btn
-        @click="navigateTo('Home')"
+        @click="navigateTo('/home')"
         text
       >
         <span class="mr-2">Home</span>
         <v-icon>mdi-home</v-icon>
     </v-btn>
     <v-btn
-        @click="navigateTo('Login')"
+        @click="navigateTo('/login')"
         text
       >
         <span class="mr-2">Login</span>
         <v-icon>mdi-account-arrow-right-outline</v-icon>
     </v-btn>
     <v-btn
-        @click="navigateTo('Register')"
+        @click="navigateTo('/register')"
         text
       >
         <span class="mr-2">Register</span>

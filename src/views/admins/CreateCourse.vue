@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="createCourse">
     <CreateCourseForm  v-if="isAdmin" />
     <NotAuthorised v-else />
   </div>
