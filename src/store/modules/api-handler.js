@@ -26,7 +26,7 @@ export default {
 
     getAllPublicCourses: (state) => state.courses.filter(x => x.isPublic === true),
 
-    getEditableCourse: (state) => (title) => state.courses.find(x => x.title == title),
+    getCourseByTitle: (state) => (title) => state.courses.find(x => x.title == title),
 
     getLecturesByTitle: (state) => (title) => state.lectures.filter(x => x.course.toLowerCase() == title.toLowerCase())
   },

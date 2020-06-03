@@ -56,7 +56,7 @@ export default {
   computed: {
     ...mapGetters([
         'isAdmin',
-        'getEditableCourse'
+        'getCourseByTitle'
     ])
   },
 
@@ -74,7 +74,7 @@ export default {
     },
 
     setEditableCourse() {
-      this.editableCourse = this.getEditableCourse(this.$route.params.title)
+      this.editableCourse = this.getCourseByTitle(this.$route.params.title)
       this.courseTitle = this.editableCourse.title
       this.courseDesc = this.editableCourse.description
       this.courseImg = this.editableCourse.imageUrl

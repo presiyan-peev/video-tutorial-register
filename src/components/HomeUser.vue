@@ -23,7 +23,7 @@
                 <v-card-subtitle>{{course.description}}</v-card-subtitle>
 
                 <div class="primary lighten-4 pa-2">
-                  <v-btn color="primary lighten-2" dark small>Details</v-btn>
+                  <v-btn color="primary lighten-2" dark small @click="navigateToCourseDetails(course.title)">Details</v-btn>
                   <v-spacer></v-spacer>
                 </div>
 
@@ -53,6 +53,11 @@ export default {
     // filters the courses by title based on the search
     coursesList() {
       return this.getAllPublicCourses.filter(course => course.title.toLowerCase().includes(this.search.toLowerCase()))
+    }
+  },
+  methods: {
+    navigateToCourseDetails(title) {
+      this.$router.push('/course-details/'+title)
     }
   },
   data: () => {

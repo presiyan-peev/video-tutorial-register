@@ -58,5 +58,5 @@ export default {
 
 <style lang="stylus">
 .homeGuestTitle 
-    height 20vh
+    height 20vh 
 </style>

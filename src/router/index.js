@@ -8,6 +8,9 @@ import CreateCourse from '../views/admins/CreateCourse.vue'
 import EditCourse from '../views/admins/EditCourse.vue'
 import LecturePanel from '../views/admins/LecturePanel.vue'
 
+import CourseDetails from '../views/users/CourseDetails.vue'
+import PlayVideo from '../views/users/PlayVideo.vue'
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -36,6 +39,16 @@ Vue.use(VueRouter)
     path: '/edit-course/:title',
     name: 'EditCourse',
     component: EditCourse
+  },
+  {
+    path: '/course-details/:title',
+    name: 'CourseDetails',
+    component: CourseDetails
+  },
+  {
+    path: '/lecture-panel/:courseTitle/:lectureTitle',
+    name: 'PlayVideo',
+    component: PlayVideo
   },
   {
     path: '/lecture-panel/:courseTitle',
