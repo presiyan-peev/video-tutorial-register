@@ -2,7 +2,7 @@
 
 export default {
     state: {
-        user: { username: "bai", password: "tosho", enrolledCourses: [], roles: ["user", "admin"] }
+        user: { username: "bai", password: "tosho", enrolledCourses: [], roles: ["user", "aadmin"] }
         /* user: {
             roles: []
         } */

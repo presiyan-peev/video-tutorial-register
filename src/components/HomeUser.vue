@@ -1,16 +1,56 @@
 <template>
   <div class="homeUser">
-    xyu za uzerite
+    <Title>Courses</Title>
+    <v-row class="searchCourses">
+      <v-col cols="2"></v-col>
+      <v-col cols="2" class="d-flex align-center">
+        <v-text-field label="Search" v-model="search"></v-text-field>
+      </v-col>
+      <v-col cols="1" class="d-flex align-center">
+        <v-btn>Search</v-btn>
+      </v-col>
+    </v-row>
+    <div class="homeUserCoursesList">
+      <v-responsive>
+        <v-container>
+          <v-row>
+            <v-col cols="4" v-for="course in coursesList" :key="course.title">
+              <v-card class="mx-auto" max-width="344px">
+                <v-img :aspect-ratio="1/1" contain :src="course.imageUrl"></v-img>
+
+                <v-card-title>{{course.title}}</v-card-title>
+
+                <v-card-subtitle>{{course.description}}</v-card-subtitle>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-responsive>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import Title from "@/components/helpers/Title.vue";
 
-// import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 
 export default {
-  name: 'HomeUser',
-
-}
+  name: "HomeUser",
+  components: {
+    Title
+  },
+  computed: {
+    ...mapGetters(["getAllPublicCourses"]),
+    coursesList() {
+      return this.getAllPublicCourses.filter(post => post.title.toLowerCase().includes(this.search.toLowerCase()))
+    }
+  },
+  data: () => {
+    return {
+      search: '',
+    }
+  }
+};
 </script>
