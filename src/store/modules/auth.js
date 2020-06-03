@@ -13,9 +13,13 @@ export default {
         isAdmin: (state) => state.user.roles.includes("admin")
     },
     mutations: {
-      
+        ENROLL_USER(state, course) {
+            state.user.enrolledCourses.push(course)
+        }
     },
     actions: {
-      
+        enrollUserToCourse({ commit }, courseTitle) {
+            commit('ENROLL_USER', courseTitle)
+        },
     },
   }
