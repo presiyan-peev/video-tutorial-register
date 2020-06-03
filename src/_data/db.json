@@ -9,6 +9,11 @@
         { "title": "Vue", "description": "Lorem ipsum", "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg", "isPublic": true, "lectures": [], "usersEnrolled": [], "usersEnrolledCount": 22 }
     ],
     "lectures": [
-        { "title": "Introduction", "videoUrl": "video.mp4", "course": "Angular" }
+        { "title": "Introduction", "videoUrl": "video.mp4", "course": "Angular" },
+        { "title": "102", "videoUrl": "video.mp4", "course": "Angular" },
+        { "title": "3rd lecture", "videoUrl": "video.mp4", "course": "Angular" },
+        { "title": "Introduction", "videoUrl": "video.mp4", "course": "Vue" },
+        { "title": "2nd lecture", "videoUrl": "video.mp4", "course": "Vue" }
+
     ]
   }

@@ -9,6 +9,7 @@
         <v-col cols="12" sm="6" md="6">
             <v-card class="px-4">
                 <v-card-text>
+                    <v-form ref="courseCreation" v-model="valid" lazy-validation>
                         <v-row>
                             <v-col cols="12">
                                 <v-text-field v-model="courseTitle" :rules="[rules.required]" label="Course Title" maxlength="20" required></v-text-field>
@@ -33,6 +34,7 @@
                                 <v-btn x-large block depressed :disabled="!valid" color="primary lighten-1" @click="validate">Submit</v-btn>
                             </v-col>
                         </v-row>
+                    </v-form>
                 </v-card-text>
             </v-card>
         </v-col>
@@ -61,16 +63,10 @@ export default {
 
   methods: {
     validate() {
-      if (this.$refs.loginForm.validate()) {
+      if (this.$refs.courseCreation.validate()) {
         // submit form to server/API here...
       }
     },
-    reset() {
-      this.$refs.form.reset();
-    },
-    resetValidation() {
-      this.$refs.form.resetValidation();
-    }
   },
   data: () => ({
     valid: true,

@@ -6,6 +6,7 @@ import Register from '../views/public/Register.vue'
 
 import CreateCourse from '../views/admins/CreateCourse.vue'
 import EditCourse from '../views/admins/EditCourse.vue'
+import LecturePanel from '../views/admins/LecturePanel.vue'
 
 Vue.use(VueRouter)
 
@@ -35,6 +36,11 @@ Vue.use(VueRouter)
     path: '/edit-course/:title',
     name: 'EditCourse',
     component: EditCourse
+  },
+  {
+    path: '/lecture-panel/:courseTitle',
+    name: 'LecturePanel',
+    component: LecturePanel
   },
   {
     path: '/about',

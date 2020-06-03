@@ -22,10 +22,10 @@
                     <v-col cols="5">
                         <v-row>
                         <v-col cols="4" class="px-0">
-                            <v-btn block depressed color="yellow darken-1"  @click="navigateToEditingCourse(course.title)">Edit Course</v-btn>
+                            <v-btn block depressed color="yellow darken-1" @click="navigateToEditingCourse(course.title)">Edit Course</v-btn>
                         </v-col>
                         <v-col cols="4" class="px-0">
-                            <v-btn block depressed color="success">Add Lectures</v-btn>
+                            <v-btn block depressed color="success" @click="navigateAddingLectures(course.title)">Add Lectures</v-btn>
                         </v-col>
                         <v-col cols="4">
                             Lectures in course: {{course.lecturesCount}}
@@ -72,6 +72,9 @@ export default {
         },
         navigateToEditingCourse(title) {
             this.$router.push('/edit-course/'+title)
+        },
+        navigateAddingLectures(title) {
+            this.$router.push('/lecture-panel/'+title)
         }
     }
 }
