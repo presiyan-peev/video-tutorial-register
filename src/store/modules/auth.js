@@ -2,7 +2,7 @@
 
 export default {
     state: {
-        user: { username: "bai", password: "tosho", enrolledCourses: [], roles: ["user", "aadmin"] }
+        user: { username: "bai", password: "tosho", enrolledCourses: [], roles: ["uuser", "admin"] }
         /* user: {
             roles: []
         } */
@@ -15,11 +15,19 @@ export default {
     mutations: {
         ENROLL_USER(state, course) {
             state.user.enrolledCourses.push(course)
+        },
+        LOG_OUT(state) {
+            state.user = {
+                roles: []
+            }
         }
     },
     actions: {
         enrollUserToCourse({ commit }, courseTitle) {
             commit('ENROLL_USER', courseTitle)
         },
+        logOut({ commit }) {
+            commit('LOG_OUT')
+        }
     },
   }

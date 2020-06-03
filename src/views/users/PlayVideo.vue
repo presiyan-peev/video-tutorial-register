@@ -8,7 +8,7 @@
             <LecturesListUser :courseTitle="$route.params.courseTitle" />
         </div>
         <div v-else>
-            <Subtitle>You should enrol for the course, before you view the requested video</Subtitle>
+            <Subtitle>You should enroll for the course, before you view the requested video</Subtitle>
         </div>
     </div>
     <NotAuthorised v-else />
