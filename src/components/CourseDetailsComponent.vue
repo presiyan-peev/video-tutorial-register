@@ -47,19 +47,21 @@ export default {
       this.title = this.getCourseByTitle(this.courseTitle).title;
       this.description = this.getCourseByTitle(this.courseTitle).description;
       this.imageUrl = this.getCourseByTitle(this.courseTitle).imageUrl;
-      this.isEnrolled = this.getCourseByTitle(this.courseTitle).usersEnrolled.includes(this.getUser.username)
+      this.isEnrolled = this.getCourseByTitle(
+        this.courseTitle
+      ).usersEnrolled.includes(this.getUser.username);
     },
 
     enrollCourse() {
-        var vm = this
-        this.enrollUserToCourse(this.title)
-            .then(() => {
-                vm.addUserToCourse({
-                    courseTitle: vm.title, 
-                    username: vm.getUser.username
-                })
-            })
-            .then(this.isEnrolled = true)
+      var vm = this;
+      this.enrollUserToCourse(this.title)
+        .then(() => {
+          vm.addUserToCourse({
+            courseTitle: vm.title,
+            username: vm.getUser.username
+          });
+        })
+        .then((this.isEnrolled = true));
     }
   },
   mounted() {

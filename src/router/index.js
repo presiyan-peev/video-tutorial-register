@@ -46,14 +46,14 @@ Vue.use(VueRouter)
     component: CourseDetails
   },
   {
-    path: '/lecture-panel/:courseTitle/:lectureTitle',
-    name: 'PlayVideo',
-    component: PlayVideo
-  },
-  {
     path: '/lecture-panel/:courseTitle',
     name: 'LecturePanel',
     component: LecturePanel
+  },
+  {
+    path: '/play-video/:courseTitle/:lectureTitle',
+    name: 'PlayVideo',
+    component: PlayVideo
   },
   {
     path: '/about',

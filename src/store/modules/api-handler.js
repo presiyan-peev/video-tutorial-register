@@ -9,11 +9,11 @@ export default {
         { title: "Vue", description: "Lorem ipsum", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg", isPublic: true, "lectures": [], usersEnrolled: [], usersEnrolledCount: 22, lecturesCount: 3 }
     ],
     lectures: [
-      { title: "Introduction", videoUrl: "video.mp4", course: "Angular" },
-        { title: "102", videoUrl: "video.mp4", course: "Angular" },
-        { title: "3rd lecture", videoUrl: "video.mp4", course: "Angular" },
-        { title: "Introduction", videoUrl: "video.mp4", course: "Vue" },
-        { title: "2nd lecture", videoUrl: "video.mp4", course: "Vue" }
+      { title: "Introduction", videoUrl: "https://www.youtube.com/embed/0eWrpsCLMJQ", course: "Angular" },
+      { title: "Components", videoUrl: "https://youtu.be/16rQyEQtpyQ", course: "Angular" },
+      { title: "Interpolation", videoUrl: "https://youtu.be/2a6OfacW_-I", course: "Angular" },
+      { title: "Introduction", videoUrl: "https://youtu.be/DyndGu0fPSE", course: "Vue" },
+      { title: "Components", videoUrl: "https://youtu.be/AhqJ95Y7-ko", course: "Vue" }
     ],
   },
   getters: {
@@ -32,8 +32,6 @@ export default {
   },
   mutations: {
     ADD_USER(state, params) {
-      console.log(`courseTitle: ${params.courseTitle}`)
-      console.log(`username: ${params.username}`)
       state.courses.find(x => x.title == params.courseTitle).usersEnrolled.push(params.username)
     }
   },

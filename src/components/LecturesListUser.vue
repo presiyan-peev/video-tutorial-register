@@ -1,7 +1,7 @@
 <template>
   <div class="lecturesList">
     <div class="lecturesList" v-if="getLecturesByTitle(courseTitle).length>0">
-      <Subtitle>There are several lectures here</Subtitle>
+      <Subtitle>Lectures List</Subtitle>
       <v-card class="lectureListContent mx-12" tile>
         <div
           v-for="lecture in getLecturesByTitle(courseTitle)"
@@ -53,7 +53,7 @@ export default {
       this.lectures = this.getLecturesByTitle(this.courseTitle);
     },
     navigatePlayingLecture(title) {
-      this.$router.push(`play-video/${this.courseTitle}/${title}`)
+      this.$router.push(`/play-video/${this.courseTitle}/${title}`)
     }
   },
 
