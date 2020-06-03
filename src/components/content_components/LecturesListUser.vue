@@ -30,13 +30,13 @@
 
 <script>
 // @ is an alias to /src
-import Subtitle from "@/components/helpers/Subtitle.vue";
+import Subtitle from "@/components/.helpers/Subtitle.vue";
 
 import { mapGetters } from "vuex";
 //import EditLecture from '../views/admins/EditLecture.vue'
 
 export default {
-  name: "LecturesList",
+  name: "LecturesListUser",
 
   props:['courseTitle'],
 

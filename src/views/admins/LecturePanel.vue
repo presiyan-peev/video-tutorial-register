@@ -4,8 +4,8 @@
       <v-row>
         <v-col cols="0" sm="3" md="3"></v-col>
         <v-col cols="12" sm="6" md="6">
-          <CreateLecture />
-          <LecturesList />
+          <CreateLectureForm />
+          <LecturesListAdmin />
         </v-col>
         <v-col cols="0" sm="3" md="3"></v-col>
       </v-row>
@@ -16,17 +16,17 @@
 
 <script>
 // @ is an alias to /src
-import CreateLecture from "@/components/CreateLecture.vue";
-import LecturesList from "@/components/LecturesList.vue";
-import NotAuthorised from "@/components/helpers/NotAuthorised.vue";
+import CreateLectureForm from "@/components/content_components/CreateLectureForm.vue";
+import LecturesListAdmin from "@/components/content_components/LecturesListAdmin.vue";
+import NotAuthorised from "@/components/.helpers/NotAuthorised.vue";
 
 import { mapGetters } from "vuex";
 
 export default {
   name: "LecturePanel",
   components: {
-    CreateLecture,
-    LecturesList,
+    CreateLectureForm,
+    LecturesListAdmin,
     NotAuthorised
   },
 

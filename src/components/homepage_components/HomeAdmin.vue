@@ -47,11 +47,10 @@
 
 <script>
 // @ is an alias to /src
-import Title from '@/components/helpers/Title.vue'
+import Title from '@/components/.helpers/Title.vue'
 
 import { mapGetters } from 'vuex'
-import CreateCourse from '../views/admins/CreateCourse.vue'
-//import EditCourse from '../views/admins/EditCourse.vue'
+import CreateCourse from '@/views/admins/CreateCourse.vue'
 
 export default {
     name: 'HomeAdmin',

@@ -10,9 +10,9 @@
 
 <script>
 // @ is an alias to /src
-import Title from '@/components/helpers/Title.vue'
-import CourseDetailsComponent from '@/components/CourseDetailsComponent.vue'
-import NotAuthorised from '@/components/helpers/NotAuthorised.vue'
+import Title from '@/components/.helpers/Title.vue'
+import CourseDetailsComponent from '@/components/content_components/CourseDetailsComponent.vue'
+import NotAuthorised from '@/components/.helpers/NotAuthorised.vue'
 
 import { mapGetters } from 'vuex'
 

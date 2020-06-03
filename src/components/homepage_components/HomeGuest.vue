@@ -41,12 +41,11 @@
 
 <script>
 // @ is an alias to /src
-// import HomeGuest from '@/components/homepage/HomeGuest.vue'
 
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'AppBarGuest',
+  name: 'HomeGuest',
 
   computed: {
     ...mapGetters([

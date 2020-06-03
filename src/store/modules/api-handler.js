@@ -10,10 +10,10 @@ export default {
     ],
     lectures: [
       { title: "Introduction", videoUrl: "https://www.youtube.com/embed/0eWrpsCLMJQ", course: "Angular" },
-      { title: "Components", videoUrl: "https://youtu.be/16rQyEQtpyQ", course: "Angular" },
-      { title: "Interpolation", videoUrl: "https://youtu.be/2a6OfacW_-I", course: "Angular" },
-      { title: "Introduction", videoUrl: "https://youtu.be/DyndGu0fPSE", course: "Vue" },
-      { title: "Components", videoUrl: "https://youtu.be/AhqJ95Y7-ko", course: "Vue" }
+      { title: "Components", videoUrl: "https://www.youtube.com/embed/16rQyEQtpyQ", course: "Angular" },
+      { title: "Interpolation", videoUrl: "https://www.youtube.com/embed/2a6OfacW_-I", course: "Angular" },
+      { title: "Introduction", videoUrl: "https://www.youtube.com/embed/DyndGu0fPSE", course: "Vue" },
+      { title: "Components", videoUrl: "https://www.youtube.com/embed/AhqJ95Y7-ko", course: "Vue" }
     ],
   },
   getters: {
@@ -27,6 +27,8 @@ export default {
     getAllPublicCourses: (state) => state.courses.filter(x => x.isPublic === true),
 
     getCourseByTitle: (state) => (title) => state.courses.find(x => x.title == title),
+
+    getSingleLectureByTitle: (state) => (params) => state.lectures.filter(x => x.course.toLowerCase() == params.course.toLowerCase()).find(x => x.title == params.lecture),
 
     getLecturesByTitle: (state) => (title) => state.lectures.filter(x => x.course.toLowerCase() == title.toLowerCase())
   },

@@ -1,14 +1,14 @@
 <template>
   <div class="playVideo">
     <div v-if="isUserIn">
-        <div v-if="isEnrolled">
             <Title>{{$route.params.courseTitle}}</Title>
+        <div v-if="isEnrolled">
             <Subtitle>Now playing: {{$route.params.lectureTitle}}</Subtitle>
-            <LectureVideo />
+            <LectureVideo :courseTitle="$route.params.courseTitle" :lectureTitle="$route.params.lectureTitle" />
             <LecturesListUser :courseTitle="$route.params.courseTitle" />
         </div>
         <div v-else>
-            <Subtitle>Please, enrol for this course</Subtitle>
+            <Subtitle>You should enrol for the course, before you view the requested video</Subtitle>
         </div>
     </div>
     <NotAuthorised v-else />
@@ -17,12 +17,12 @@
 
 <script>
 // @ is an alias to /src
-import Title from "@/components/helpers/Title.vue";
-import Subtitle from "@/components/helpers/Subtitle.vue";
-import NotAuthorised from "@/components/helpers/NotAuthorised.vue";
+import Title from "@/components/.helpers/Title.vue";
+import Subtitle from "@/components/.helpers/Subtitle.vue";
+import NotAuthorised from "@/components/.helpers/NotAuthorised.vue";
 
-import LectureVideo from "@/components/LectureVideo.vue";
-import LecturesListUser from "@/components/LecturesListUser.vue";
+import LectureVideo from "@/components/content_components/LectureVideo.vue";
+import LecturesListUser from "@/components/content_components/LecturesListUser.vue";
 
 import { mapGetters } from "vuex";
 

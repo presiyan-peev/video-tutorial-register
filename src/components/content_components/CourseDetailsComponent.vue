@@ -23,8 +23,8 @@
 <script>
 // @ is an alias to /src
 
-import LecturesListUser from "@/components/LecturesListUser.vue";
-import Subtitle from "@/components/helpers/Subtitle.vue";
+import LecturesListUser from "@/components/content_components/LecturesListUser.vue";
+import Subtitle from "@/components/.helpers/Subtitle.vue";
 
 import { mapGetters, mapActions } from "vuex";
 

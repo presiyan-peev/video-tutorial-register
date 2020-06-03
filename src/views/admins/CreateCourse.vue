@@ -7,8 +7,8 @@
 
 <script>
 // @ is an alias to /src
-import CreateCourseForm from '@/components/CreateCourseForm.vue'
-import NotAuthorised from '@/components/helpers/NotAuthorised.vue'
+import CreateCourseForm from '@/components/content_components/CreateCourseForm.vue'
+import NotAuthorised from '@/components/.helpers/NotAuthorised.vue'
 
 import { mapGetters } from 'vuex'
 

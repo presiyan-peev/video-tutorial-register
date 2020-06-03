@@ -44,7 +44,7 @@
 
 <script>
 // @ is an alias to /src
-import Title from '@/components/helpers/Title.vue'
+import Title from '@/components/.helpers/Title.vue'
 
 import { mapGetters } from 'vuex'
 
