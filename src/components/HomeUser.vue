@@ -21,6 +21,12 @@
                 <v-card-title>{{course.title}}</v-card-title>
 
                 <v-card-subtitle>{{course.description}}</v-card-subtitle>
+
+                <div class="primary lighten-4 pa-2">
+                  <v-btn color="primary lighten-2" dark small>Details</v-btn>
+                  <v-spacer></v-spacer>
+                </div>
+
               </v-card>
             </v-col>
           </v-row>
@@ -43,8 +49,10 @@ export default {
   },
   computed: {
     ...mapGetters(["getAllPublicCourses"]),
+
+    // filters the courses by title based on the search
     coursesList() {
-      return this.getAllPublicCourses.filter(post => post.title.toLowerCase().includes(this.search.toLowerCase()))
+      return this.getAllPublicCourses.filter(course => course.title.toLowerCase().includes(this.search.toLowerCase()))
     }
   },
   data: () => {
