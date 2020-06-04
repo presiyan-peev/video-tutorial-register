@@ -56,16 +56,10 @@ export default {
       })
     },
 
-    // update data every 60 seconds by default
+    // updates data (lectures and courses) every 60 seconds by default
     fetchEduData({dispatch}) {
-      dispatch('fetchAllCourses').then(
-        setInterval(() => {
-          dispatch('fetchAllCourses')
-        }, 60000))
-      dispatch('fetchAllLectures').then(
-        setInterval(() => {
-          dispatch('fetchAllLectures')
-        }, 60000))  
+      dispatch('fetchAllCourses')
+      dispatch('fetchAllLectures')
     }
   },
 }
