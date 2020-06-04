@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <HomeGuest v-if="!isUserIn && !isAdmin" />
-    <HomeUser v-if="isUserIn" />
+    <HomeUser v-if="isUserIn && !isAdmin" />
     <HomeAdmin v-if="isAdmin" />
   </div>
 </template>

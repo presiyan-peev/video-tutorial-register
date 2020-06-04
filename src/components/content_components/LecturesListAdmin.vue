@@ -9,13 +9,14 @@
           class="lectureListItem"
         >
           <v-divider></v-divider>
-          <v-row class="pl-9 d-flex align-center">
+          <v-row class="pl-9 pr-3 d-flex align-center">
             <v-col cols="3">{{lecture.title}}</v-col>
             <v-spacer></v-spacer>
-            <v-col cols="1">
+            <v-col cols="2">
               <v-btn
-                block
+                
                 depressed
+                small
                 color="red"
                 @click="navigateAddingLectures(lecture.title)"
               >Delete</v-btn>

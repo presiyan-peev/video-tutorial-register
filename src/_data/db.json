@@ -3,7 +3,7 @@
     {
       "id": 0,
       "username": "bai",
-      "password": "tosho",
+      "password": "toshoooo",
       "enrolledCourses": [],
       "roles": [
         "admin",
@@ -67,6 +67,33 @@
     {
       "id": 1591231107991,
       "username": "drew",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 1591231322467,
+      "username": "Popcr",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 1591231814606,
+      "username": "Rewe",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 1591274271768,
+      "username": "Peter",
       "password": "sSiL6YUFmzpd8e3",
       "enrolledCourses": [],
       "roles": [

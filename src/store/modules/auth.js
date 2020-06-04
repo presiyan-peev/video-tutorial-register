@@ -2,15 +2,25 @@ import axios from 'axios'
 
 export default {
     state: {
-        allUsernames: [],
+        allUsers: [],
         user: {
             roles: []
         }
     },
     getters: {
         getUser: (state) => state.user,
-        getAllUsernames: (state) => state.allUsernames,
-        isUserIn: (state) => state.user.roles.includes("user") && !state.user.roles.includes("admin"),
+        getAllUsers: (state) => state.allUsers,
+        getAllUsernames: (state) => {
+            let usernames = []
+            state.allUsers.forEach(user => {
+                usernames.push(user.username)
+            });
+            return usernames
+        },
+        /**
+         * TODO в момента работи с закоментирания шит, обаче тогава админът не вижда юзърските неща. Трябва да гооправя
+         */
+        isUserIn: (state) => state.user.roles.includes("user"), /* && !state.user.roles.includes("admin"), */
         isAdmin: (state) => state.user.roles.includes("admin")
     },
     mutations: {
@@ -26,8 +36,8 @@ export default {
             }
         },
 
-        ADD_AN_USERNAME(state, username) {
-            state.allUsernames.push(username)
+        FETCH_ALL_USERS(state, user) {
+            state.allUsers.push(user)
         }
     },
     actions: {
@@ -45,31 +55,21 @@ export default {
                 .get('http://localhost:3000/users')
                 .then(response => {
                     for (const user of response.data) {
-                        commit('ADD_AN_USERNAME', user.username)
+                        commit('FETCH_ALL_USERS', user)
                     }
                 })
         },
 
-       /*  registerUser({ commit }, newUser) {
-            console.log(`1st newUser: `)
-            console.log(newUser)
+        registerUser({ commit }, newUser) {
             axios
                 .post('http://localhost:3000/users', newUser)
                 .then(() => {
-                    console.log(`2nd newUser: ${newUser}`)
                     commit('LOG_IN', newUser)
                 })
-        } */
+        },
 
-        registerUser({ commit }, newUser) {
-            axios({
-                method: 'post',
-                url: 'http://localhost:3000/users',
-                data: newUser
-            })
-                .then(() => {
-                    commit('LOG_IN', newUser)
-                })
+        logIn({ commit }, newUser) {
+            commit('LOG_IN', newUser)
         }
     }, 
   }

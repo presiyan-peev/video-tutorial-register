@@ -52,18 +52,36 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   // https://www.codeply.com/p/hBkZaWgmnk
   name: "loginComponent",
   computed: {
+    ...mapGetters([
+        'isUserIn',
+        'getAllUsers',
+        'getAllUsernames'
+    ]),
     passwordMatch() {
       return () => this.password === this.verify || "Password must match";
     }
   },
   methods: {
+    ...mapActions(['logIn']),
+
     validate() {
       if (this.$refs.loginForm.validate()) {
         // submit form to server/API here...
+        if(this.getAllUsernames.includes(this.userName)) {
+          if(this.password === this.getAllUsers.find(x => x.username === this.userName).password) {
+            this.logIn(this.getAllUsers.find(x => x.username === this.userName))
+          } else {
+            alert ("Wrong password")
+          }
+        } else {
+          alert("Wrong Username")
+        }
       }
     },
     reset() {
@@ -71,6 +89,12 @@ export default {
     },
     resetValidation() {
       this.$refs.form.resetValidation();
+    }
+  },
+  watch: {
+    isUserIn() {
+      console.log('xyu')
+      this.$router.push('/')
     }
   },
   data: () => ({
