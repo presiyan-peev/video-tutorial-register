@@ -1,19 +1,142 @@
 {
-    "users": [
-        { "username": "bai", "password": "tosho", "enrolledCourses": [], "roles": [] }
-    ],
-    "courses": [
-        { "title": "Angular", "description": "Lorem ipsum", "imageUrl": "https://cdn.worldvectorlogo.com/logos/angular-icon.svg", "isPublic": true, "lectures": [], "usersEnrolled": [], "usersEnrolledCount": 21 },
-        { "title": "React", "description": "Lorem ipsum", "imageUrl": "https://cdn.worldvectorlogo.com/logos/react.svg", "isPublic": true, "lectures": [], "usersEnrolled": [], "usersEnrolledCount": 14 },
-        { "title": "node.js", "description": "Lorem ipsum", "imageUrl": "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg", "isPublic": true, "lectures": [], "usersEnrolled": [], "usersEnrolledCount": 2 },
-        { "title": "Vue", "description": "Lorem ipsum", "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg", "isPublic": true, "lectures": [], "usersEnrolled": [], "usersEnrolledCount": 22 }
-    ],
-    "lectures": [
-        { "title": "Introduction", "videoUrl": "video.mp4", "course": "Angular" },
-        { "title": "102", "videoUrl": "video.mp4", "course": "Angular" },
-        { "title": "3rd lecture", "videoUrl": "video.mp4", "course": "Angular" },
-        { "title": "Introduction", "videoUrl": "video.mp4", "course": "Vue" },
-        { "title": "2nd lecture", "videoUrl": "video.mp4", "course": "Vue" }
-
-    ]
-  }
+  "users": [
+    {
+      "id": 0,
+      "username": "bai",
+      "password": "tosho",
+      "enrolledCourses": [],
+      "roles": [
+        "admin",
+        "user"
+      ]
+    },
+    {
+      "id": 1591230717634,
+      "username": "Petko",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 1591230787578,
+      "username": "Red",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 1591230792313,
+      "username": "Red",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 1591231028824,
+      "username": "Res",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 1591231045569,
+      "username": "zzzz",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 1591231089023,
+      "username": "dre",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    },
+    {
+      "id": 1591231107991,
+      "username": "drew",
+      "password": "sSiL6YUFmzpd8e3",
+      "enrolledCourses": [],
+      "roles": [
+        "user"
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "title": "Angular",
+      "description": "Lorem ipsum",
+      "imageUrl": "https://cdn.worldvectorlogo.com/logos/angular-icon.svg",
+      "isPublic": true,
+      "lectures": [],
+      "usersEnrolled": [],
+      "usersEnrolledCount": 21
+    },
+    {
+      "title": "React",
+      "description": "Lorem ipsum",
+      "imageUrl": "https://cdn.worldvectorlogo.com/logos/react.svg",
+      "isPublic": true,
+      "lectures": [],
+      "usersEnrolled": [],
+      "usersEnrolledCount": 14
+    },
+    {
+      "title": "node.js",
+      "description": "Lorem ipsum",
+      "imageUrl": "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
+      "isPublic": true,
+      "lectures": [],
+      "usersEnrolled": [],
+      "usersEnrolledCount": 2
+    },
+    {
+      "title": "Vue",
+      "description": "Lorem ipsum",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
+      "isPublic": true,
+      "lectures": [],
+      "usersEnrolled": [],
+      "usersEnrolledCount": 22
+    }
+  ],
+  "lectures": [
+    {
+      "title": "Introduction",
+      "videoUrl": "video.mp4",
+      "course": "Angular"
+    },
+    {
+      "title": "102",
+      "videoUrl": "video.mp4",
+      "course": "Angular"
+    },
+    {
+      "title": "3rd lecture",
+      "videoUrl": "video.mp4",
+      "course": "Angular"
+    },
+    {
+      "title": "Introduction",
+      "videoUrl": "video.mp4",
+      "course": "Vue"
+    },
+    {
+      "title": "2nd lecture",
+      "videoUrl": "video.mp4",
+      "course": "Vue"
+    }
+  ]
+}

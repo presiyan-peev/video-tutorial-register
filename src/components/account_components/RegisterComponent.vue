@@ -12,6 +12,7 @@
                     v-model="userName"
                     :rules="[rules.required]"
                     label="Username"
+                    :hint="usernameHint"
                     maxlength="20"
                     required
                   ></v-text-field>
@@ -65,25 +66,56 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   // https://www.codeply.com/p/hBkZaWgmnk
   name: "RegisterComponent",
   computed: {
+    ...mapGetters([
+        'getAllUsernames',
+        'isUserIn'
+    ]),
     passwordMatch() {
       return () => this.password === this.verify || "Password must match";
     }
   },
   methods: {
+    ...mapActions(['registerUser']),
+
     validate() {
-      if (this.$refs.loginForm.validate()) {
+      if (this.isNotUnique()) {
+        this.usernameHint = 'Username already exists'
+        alert("Username already exists")
+        return
+      }
+      if (this.$refs.registerForm.validate()) {
         // submit form to server/API here...
+        this.registerUser({
+          id: Date.now(),
+          username: this.userName,
+          password: this.password,
+          enrolledCourses: [],
+          roles: ['user']
+        })
       }
     },
+
+    // return true when the username is not unique
+    isNotUnique() {
+      return this.getAllUsernames.includes(this.userName)
+    },
     reset() {
-      this.$refs.form.reset();
+      this.$refs.registerForm.reset();
     },
     resetValidation() {
-      this.$refs.form.resetValidation();
+      this.$refs.registerForm.resetValidation();
+    }
+  },
+  watch: {
+    isUserIn() {
+      console.log('xyu')
+      this.$router.push('/')
     }
   },
   data: () => ({
@@ -93,9 +125,10 @@ export default {
     password: "",
     verify: "",
     show1: false,
+    usernameHint: '',
     rules: {
       required: value => !!value || "Required.",
-      min: v => (v && v.length >= 8) || "Min 8 characters"
+      min: v => (v && v.length >= 8) || "Min 8 characters",
     }
   })
 };

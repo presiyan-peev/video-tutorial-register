@@ -24,11 +24,19 @@
 <script>
 import AppBarGuest from "@/components/.helpers/AppBarGuest"
 
+import { mapActions } from 'vuex'
+
 export default {
   name: 'App',
 
   components: {
     AppBarGuest,
+  },
+  methods: {
+    ...mapActions(['fetchAllUsernames'])
+  },
+  created() {
+    this.fetchAllUsernames()
   },
   data: () => ({
     //
