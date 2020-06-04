@@ -81,7 +81,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['registerUser']),
+    ...mapActions(['registerUser', 'fetchAllUsernames']),
 
     validate() {
       if (this.isNotUnique()) {
@@ -114,10 +114,14 @@ export default {
   },
   watch: {
     isUserIn() {
-      console.log('xyu')
       this.$router.push('/')
     }
   },
+
+  created() {
+    this.fetchAllUsernames()
+  },
+
   data: () => ({
     valid: true,
 

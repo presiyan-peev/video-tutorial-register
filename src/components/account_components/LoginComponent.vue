@@ -68,7 +68,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['logIn']),
+    ...mapActions(['logIn', 'fetchAllUsernames']),
 
     validate() {
       if (this.$refs.loginForm.validate()) {
@@ -93,10 +93,14 @@ export default {
   },
   watch: {
     isUserIn() {
-      console.log('xyu')
       this.$router.push('/')
     }
   },
+
+created() {
+    this.fetchAllUsernames()
+  },
+
   data: () => ({
     valid: true,
 

@@ -33,10 +33,10 @@ export default {
     AppBarGuest,
   },
   methods: {
-    ...mapActions(['fetchAllUsernames'])
+    ...mapActions(['fetchEduData'])
   },
   created() {
-    this.fetchAllUsernames()
+    this.fetchEduData()
   },
   data: () => ({
     //
