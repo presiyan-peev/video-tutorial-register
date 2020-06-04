@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="0" sm="3" md="3"></v-col>
         <v-col cols="12" sm="6" md="6">
-          <CreateLectureForm />
+          <CreateLectureForm :course="$route.params.courseTitle" />
           <LecturesListAdmin />
         </v-col>
         <v-col cols="0" sm="3" md="3"></v-col>

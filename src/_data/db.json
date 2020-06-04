@@ -11,87 +11,6 @@
       ]
     },
     {
-      "id": 1591230717634,
-      "username": "Petko",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591230787578,
-      "username": "Red",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591230792313,
-      "username": "Red",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591231028824,
-      "username": "Res",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591231045569,
-      "username": "zzzz",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591231089023,
-      "username": "dre",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591231107991,
-      "username": "drew",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591231322467,
-      "username": "Popcr",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591231814606,
-      "username": "Rewe",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
       "id": 1591274271768,
       "username": "Peter",
       "password": "sSiL6YUFmzpd8e3",
@@ -99,46 +18,6 @@
       "roles": [
         "user"
       ]
-    },
-    {
-      "id": 1591299776423,
-      "username": "xyu4o",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591299951155,
-      "username": "xyu4ew",
-      "password": "sSiL6YUFmzpd8e3",
-      "enrolledCourses": [],
-      "roles": [
-        "user"
-      ]
-    },
-    {
-      "id": 1591310894871,
-      "title": "node",
-      "description": "losho",
-      "imageUrl": "zzz",
-      "isPublic": false,
-      "lectures": [],
-      "usersEnrolled": [],
-      "lecturesCount": 0,
-      "usersEnrolledCount": 0
-    },
-    {
-      "id": 1591310971285,
-      "title": "express",
-      "description": "ex",
-      "imageUrl": "ss",
-      "isPublic": false,
-      "lectures": [],
-      "usersEnrolled": [],
-      "lecturesCount": 0,
-      "usersEnrolledCount": 0
     }
   ],
   "courses": [
@@ -147,7 +26,11 @@
       "description": "Lorem ipsum",
       "imageUrl": "https://cdn.worldvectorlogo.com/logos/angular-icon.svg",
       "isPublic": true,
-      "lectures": [],
+      "lectures": [
+        "Introduction",
+        "Components",
+        "Interpolation"
+      ],
       "usersEnrolled": [
         "baio"
       ],
@@ -162,7 +45,7 @@
       "lectures": [],
       "usersEnrolled": [],
       "usersEnrolledCount": 14,
-      "lecturesCount": 3
+      "lecturesCount": 0
     },
     {
       "title": "nodejs",
@@ -172,17 +55,20 @@
       "lectures": [],
       "usersEnrolled": [],
       "usersEnrolledCount": 2,
-      "lecturesCount": 3
+      "lecturesCount": 0
     },
     {
       "title": "Vue",
       "description": "Lorem ipsum",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
       "isPublic": true,
-      "lectures": [],
+      "lectures": [
+        "Introduction",
+        "Components"
+      ],
       "usersEnrolled": [],
       "usersEnrolledCount": 22,
-      "lecturesCount": 3
+      "lecturesCount": 2
     }
   ],
   "lectures": [

@@ -27,14 +27,29 @@ export default {
 
     getSingleLectureByTitle: (state) => (params) => state.lectures.filter(x => x.course.toLowerCase() == params.course.toLowerCase()).find(x => x.title == params.lecture),
 
-    getLecturesByTitle: (state) => (title) => state.lectures.filter(x => x.course.toLowerCase() == title.toLowerCase())
+    getLecturesByTitle: (state) => (title) => state.lectures.filter(x => x.course.toLowerCase() == title.toLowerCase()),
+
+    getAllLecturesTitles: (state) => {
+      let lectureTitles = []
+      state.lectures.forEach(lecture => {
+        lectureTitles.push(lecture.title)
+      });
+      return lectureTitles
+    },
   },
   mutations: {
     ADD_USER(state, params) {
       state.courses.find(x => x.title == params.courseTitle).usersEnrolled.push(params.username)
     },
-    CREATE_COURSE(state, val) {
+    ADD_NEW_COURSE(state, val) {
       state.courses.push(val)
+    },
+    INCREMENT_COURSE_LECTURES(state, val){
+      console.log("INCREMENT")
+      state.courses.find(x => x.title = val).lecturesCount += 1
+    },
+    ADD_NEW_LECTURE(state, val) {
+      state.lectures.push(val)
     },
     FETCH_LECTURES(state, val) {
       state.lectures.push(val)
@@ -50,9 +65,18 @@ export default {
 
     createCourse({ commit }, course) {
       axios
-        .post('http://localhost:3000/users', course)
+        .post('http://localhost:3000/courses', course)
         .then(() => {
-          commit('CREATE_COURSE', course)
+          commit('ADD_NEW_COURSE', course)
+        })  
+    },
+
+    createLecture({ commit }, lecture) {
+      axios
+        .post('http://localhost:3000/lectures', lecture)
+        .then(() => {
+          commit('ADD_NEW_LECTURE', lecture)
+          commit('INCREMENT_COURSE_LECTURES', lecture.course)
         })  
     },
 
