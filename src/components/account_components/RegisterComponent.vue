@@ -81,7 +81,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['registerUser', 'fetchAllUsernames']),
+    ...mapActions(['registerUser', 'fetchAllUsers']),
 
     validate() {
       if (this.isNotUnique()) {
@@ -119,7 +119,7 @@ export default {
   },
 
   created() {
-    this.fetchAllUsernames()
+    this.fetchAllUsers()
   },
 
   data: () => ({

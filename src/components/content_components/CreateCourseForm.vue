@@ -12,7 +12,7 @@
                     <v-form ref="courseCreation" v-model="valid" lazy-validation>
                         <v-row>
                             <v-col cols="12">
-                                <v-text-field v-model="courseTitle" :rules="[rules.required]" label="Course Title" maxlength="20" required></v-text-field>
+                                <v-text-field v-model="courseTitle" :rules="[rules.required]" label="Course Title" maxlength="20" :hint="titleHint" required></v-text-field>
                             </v-col>
                             <v-col cols="12">
                                 <v-textarea v-model="courseDesc" :rules="[rules.required]" label="Course Description" maxlength="50" required></v-textarea>
@@ -48,7 +48,7 @@
 // @ is an alias to /src
 import Title from '@/components/.helpers/Title.vue'
 
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'CreateCourseForm',
@@ -57,17 +57,48 @@ export default {
   },
   computed: {
     ...mapGetters([
-        'isAdmin'
+        'isAdmin',
+        'getAllCoursesTitles'
     ])
   },
 
   methods: {
+    ...mapActions(['createCourse']),
+
     validate() {
+      if(this.isNotUnique()){
+        this.titleHint = 'Course with this title already exists'
+        alert('Course with this title already exists')
+        return
+      }
       if (this.$refs.courseCreation.validate()) {
         // submit form to server/API here...
+        this.createCourse({
+          id: Date.now(),
+          title: this.courseTitle,
+          description: this.courseDesc,
+          imageUrl: this.courseImg,
+          isPublic: this.isPublic,
+          lectures: [],
+          usersEnrolled: [],
+          lecturesCount: 0,
+          usersEnrolledCount: 0,
+        })
       }
     },
+
+    // return true when the username is not unique
+    isNotUnique() {
+      return this.getAllCoursesTitles.includes(this.courseTitle)
+    },
   },
+
+  watch: {
+    getAllCoursesTitles() {
+      this.$router.push('/')
+    }
+  },
+
   data: () => ({
     valid: true,
     
@@ -75,11 +106,8 @@ export default {
     courseDesc: "",
     courseImg: "",
     isPublic: false,
-    lectures: [],
-    usersEnrolled: [],
-    lecturesCount: 0,
-    usersEnrolledCount: 0,
     verify: "",
+    titleHint: '',
     show1: false,
     rules: {
       required: value => !!value || "Required.",

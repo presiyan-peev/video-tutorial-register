@@ -50,7 +50,7 @@ export default {
 
         /*
         I fetch them, so that I can compare registration username with already existing usernames */
-        fetchAllUsernames({ commit }) {
+        fetchAllUsers({ commit }) {
             axios
                 .get('http://localhost:3000/users')
                 .then(response => {

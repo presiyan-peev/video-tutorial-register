@@ -13,6 +13,14 @@ export default {
     
     getAllCourses: (state) => state.courses,
 
+    getAllCoursesTitles: (state) => {
+      let courseTitles = []
+      state.courses.forEach(course => {
+        courseTitles.push(course.title)
+      });
+      return courseTitles
+    },
+
     getAllPublicCourses: (state) => state.courses.filter(x => x.isPublic === true),
 
     getCourseByTitle: (state) => (title) => state.courses.find(x => x.title == title),
@@ -25,6 +33,9 @@ export default {
     ADD_USER(state, params) {
       state.courses.find(x => x.title == params.courseTitle).usersEnrolled.push(params.username)
     },
+    CREATE_COURSE(state, val) {
+      state.courses.push(val)
+    },
     FETCH_LECTURES(state, val) {
       state.lectures.push(val)
     },
@@ -35,6 +46,14 @@ export default {
   actions: {
     addUserToCourse({commit}, params) {
       commit('ADD_USER', params)
+    },
+
+    createCourse({ commit }, course) {
+      axios
+        .post('http://localhost:3000/users', course)
+        .then(() => {
+          commit('CREATE_COURSE', course)
+        })  
     },
 
     fetchAllLectures({commit}) {

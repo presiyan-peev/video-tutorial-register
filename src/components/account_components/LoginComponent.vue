@@ -68,7 +68,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['logIn', 'fetchAllUsernames']),
+    ...mapActions(['logIn', 'fetchAllUsers']),
 
     validate() {
       if (this.$refs.loginForm.validate()) {
@@ -98,7 +98,7 @@ export default {
   },
 
 created() {
-    this.fetchAllUsernames()
+    this.fetchAllUsers()
   },
 
   data: () => ({
