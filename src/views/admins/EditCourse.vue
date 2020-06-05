@@ -1,6 +1,6 @@
 <template>
   <div class="editCourse">
-    <EditCourseForm v-if="isAdmin" />
+    <EditCourseForm v-if="isAdmin" :course="$route.params.title" />
     <NotAuthorised v-else />
   </div>
 </template>

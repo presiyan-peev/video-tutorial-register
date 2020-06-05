@@ -18,7 +18,7 @@
                 depressed
                 small
                 color="red"
-                @click="navigateAddingLectures(lecture.title)"
+                @click="deleteLecture(lecture.id)"
               >Delete</v-btn>
             </v-col>
           </v-row>
@@ -36,7 +36,7 @@
 // @ is an alias to /src
 import Title from "@/components/.helpers/Title.vue";
 
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 //import EditLecture from '../views/admins/EditLecture.vue'
 
 export default {
@@ -51,8 +51,15 @@ export default {
   },
 
   methods: {
+    ...mapActions(['removeLecture']),
     setLectureData() {
       this.lectures = this.getLecturesByTitle(this.$route.params.courseTitle);
+    },
+    deleteLecture(id) {
+      this.removeLecture({
+        lectureId: id,
+        course: this.lectures.find(x => x.id === id).course
+      })
     }
   },
 

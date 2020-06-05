@@ -44,13 +44,29 @@ export default {
     ADD_NEW_COURSE(state, val) {
       state.courses.push(val)
     },
+    UPDATE_COURSE(state, val) {
+      state.courses.find(x => x.id === val.id).title = val.title
+      state.courses.find(x => x.id === val.id).description = val.description
+      state.courses.find(x => x.id === val.id).imageUrl = val.imageUrl
+      state.courses.find(x => x.id === val.id).isPublic = val.isPublic
+
+      // i do this so that I can trigger the watcher in EditCourseForm
+      state.courses.reverse()
+    },
     INCREMENT_COURSE_LECTURES(state, val){
-      console.log("INCREMENT")
-      state.courses.find(x => x.title = val).lecturesCount += 1
+      state.courses.find(x => x.title === val).lecturesCount += 1
+    },
+    DECREMENT_COURSE_LECTURES(state, val) {
+      state.courses.find(x => x.title === val).lecturesCount -= 1
     },
     ADD_NEW_LECTURE(state, val) {
       state.lectures.push(val)
     },
+    REMOVE_LECTURE(state, val) {
+      const lectureIndex = state.lectures.findIndex(x => x.title === val)
+      state.lectures.splice(lectureIndex, 1)
+    },
+
     FETCH_LECTURES(state, val) {
       state.lectures.push(val)
     },
@@ -71,12 +87,29 @@ export default {
         })  
     },
 
+    editCourse({ commit }, params) {
+      axios
+        .patch(`http://localhost:3000/courses/${params.id}`, params)
+        .then(() => {
+          commit('UPDATE_COURSE', params)
+        }) 
+    },
+
     createLecture({ commit }, lecture) {
       axios
         .post('http://localhost:3000/lectures', lecture)
         .then(() => {
           commit('ADD_NEW_LECTURE', lecture)
           commit('INCREMENT_COURSE_LECTURES', lecture.course)
+        })  
+    },
+
+    removeLecture({ commit }, params) {
+      axios
+        .delete(`http://localhost:3000/lectures/${params.lectureId}`)
+        .then(() => {
+          commit('REMOVE_LECTURE', params.lectureId)
+          commit('DECREMENT_COURSE_LECTURES', params.course)
         })  
     },
 

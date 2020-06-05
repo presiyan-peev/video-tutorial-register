@@ -22,24 +22,20 @@
   ],
   "courses": [
     {
+      "id": 111,
       "title": "Angular",
       "description": "Lorem ipsum",
       "imageUrl": "https://cdn.worldvectorlogo.com/logos/angular-icon.svg",
       "isPublic": true,
-      "lectures": [
-        "Introduction",
-        "Components",
-        "Interpolation"
-      ],
-      "usersEnrolled": [
-        "baio"
-      ],
-      "usersEnrolledCount": 21,
+      "lectures": [],
+      "usersEnrolled": [],
+      "usersEnrolledCount": 2,
       "lecturesCount": 3
     },
     {
+      "id": 112,
       "title": "React",
-      "description": "Lorem ipsum",
+      "description": "Lorem",
       "imageUrl": "https://cdn.worldvectorlogo.com/logos/react.svg",
       "isPublic": true,
       "lectures": [],
@@ -48,6 +44,7 @@
       "lecturesCount": 0
     },
     {
+      "id": 113,
       "title": "nodejs",
       "description": "Lorem ipsum",
       "imageUrl": "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
@@ -58,41 +55,44 @@
       "lecturesCount": 0
     },
     {
+      "id": 121,
       "title": "Vue",
-      "description": "Lorem ipsum",
+      "description": "Lorem ipsum dolor ",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
       "isPublic": true,
-      "lectures": [
-        "Introduction",
-        "Components"
-      ],
+      "lectures": [],
       "usersEnrolled": [],
-      "usersEnrolledCount": 22,
+      "usersEnrolledCount": 2,
       "lecturesCount": 2
     }
   ],
   "lectures": [
     {
+      "id": 1222,
       "title": "Introduction",
       "videoUrl": "https://www.youtube.com/embed/0eWrpsCLMJQ",
       "course": "Angular"
     },
     {
+      "id": 12222,
       "title": "Components",
       "videoUrl": "https://www.youtube.com/embed/16rQyEQtpyQ",
       "course": "Angular"
     },
     {
+      "id": 122,
       "title": "Interpolation",
       "videoUrl": "https://www.youtube.com/embed/2a6OfacW_-I",
       "course": "Angular"
     },
     {
+      "id": 12243,
       "title": "Introduction",
       "videoUrl": "https://www.youtube.com/embed/DyndGu0fPSE",
       "course": "Vue"
     },
     {
+      "id": 12221,
       "title": "Components",
       "videoUrl": "https://www.youtube.com/embed/AhqJ95Y7-ko",
       "course": "Vue"
