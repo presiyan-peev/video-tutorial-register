@@ -52,7 +52,7 @@ export default {
 
     // filters the courses by title based on the search
     coursesList() {
-      return this.getAllPublicCourses.filter(course => course.title.toLowerCase().includes(this.search.toLowerCase()))
+      return this.getAllPublicCourses.filter(course => course.title.toLowerCase().includes(this.search.toLowerCase()) && course.isPublic === true)
     }
   },
   methods: {

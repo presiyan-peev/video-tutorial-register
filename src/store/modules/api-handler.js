@@ -11,6 +11,7 @@ export default {
 
     // sort the array of courses by enrolled users and then retrieve the first three
     getTopThreeCourses: (state) => state.courses.sort((a, b) => parseInt(b.usersEnrolledCount) - parseInt(a.usersEnrolledCount))
+                                                .filter(x => x.isPublic === true)
                                                 .slice(0, 3),
     
     getAllCourses: (state) => state.courses,
@@ -25,7 +26,7 @@ export default {
 
     getAllPublicCourses: (state) => state.courses.filter(x => x.isPublic === true),
 
-    getCourseByTitle: (state) => (title) => state.courses.find(x => x.title == title),
+    getCourseByTitle: (state) => (title) => state.courses.find(x => x.title == title && x.isPublic === true),
 
     getSingleLectureByTitle: (state) => (params) => state.lectures.filter(x => x.course.toLowerCase() == params.course.toLowerCase()).find(x => x.title == params.lecture),
 

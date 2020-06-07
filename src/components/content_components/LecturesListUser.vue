@@ -10,8 +10,8 @@
         >
           <v-divider></v-divider>
           <v-row class="pl-9 d-flex align-center">
-            <v-col cols="3">{{lecture.title}}</v-col>
-            <v-spacer></v-spacer>
+            <v-col cols="11" lg="9" md="5" xs="2">{{lecture.title}}</v-col>
+            <v-spacer />
             <v-col cols="1" class="mr-2">
               <v-btn
                 block

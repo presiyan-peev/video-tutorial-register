@@ -24,7 +24,7 @@
     {
       "id": 111,
       "title": "Angular",
-      "description": "Lorem ipsum",
+      "description": "Lorem ipsuma",
       "imageUrl": "https://cdn.worldvectorlogo.com/logos/angular-icon.svg",
       "isPublic": true,
       "lectures": [],
@@ -64,6 +64,17 @@
       "usersEnrolled": [],
       "usersEnrolledCount": 2,
       "lecturesCount": 2
+    },
+    {
+      "id": 1591564667378,
+      "title": "GPS",
+      "description": "konio",
+      "imageUrl": "https://direct.rhapsody.com/imageserver/images/Art.46932572/356x237.jpg",
+      "isPublic": false,
+      "lectures": [],
+      "usersEnrolled": [],
+      "lecturesCount": 0,
+      "usersEnrolledCount": 0
     }
   ],
   "lectures": [
