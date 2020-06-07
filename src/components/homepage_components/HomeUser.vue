@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     navigateToCourseDetails(title) {
-      this.$router.push('/course-details/'+title)
+      this.$router.push({ name: 'CourseDetails', params: {title: title}})
     }
   },
   data: () => {

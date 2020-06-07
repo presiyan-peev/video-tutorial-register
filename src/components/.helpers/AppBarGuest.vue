@@ -18,14 +18,14 @@
     </span>
     <span v-else>
       <v-btn
-          @click="navigateTo('/login')"
+          @click="navigateTo({name: 'Login'})"
           text
         >
           <span class="mr-2">Login</span>
           <v-icon>mdi-account-arrow-left-outline</v-icon>
       </v-btn>
       <v-btn
-          @click="navigateTo('/register')"
+          @click="navigateTo({name: 'Register'})"
           text
         >
           <span class="mr-2">Register</span>

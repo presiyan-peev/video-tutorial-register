@@ -4,8 +4,13 @@
             <Title>{{$route.params.courseTitle}}</Title>
         <div v-if="isEnrolled">
             <Subtitle>Now playing: {{$route.params.lectureTitle}}</Subtitle>
-            <LectureVideo :courseTitle="$route.params.courseTitle" :lectureTitle="$route.params.lectureTitle" />
-            <LecturesListUser :courseTitle="$route.params.courseTitle" />
+            <LectureVideo 
+              :courseTitle="$route.params.courseTitle" 
+              :lectureTitle="$route.params.lectureTitle" 
+              :key="toggleVideo" />
+            <LecturesListUser 
+              :courseTitle="$route.params.courseTitle" 
+              @request-another-video="forceRerender" />
         </div>
         <div v-else>
             <Subtitle>You should enroll for the course, before you view the requested video</Subtitle>
@@ -45,6 +50,12 @@ export default {
       this.isEnrolled = this.getCourseByTitle(
         this.$route.params.courseTitle
       ).usersEnrolled.includes(this.getUser.username);
+    },
+
+    // forcibly rerenders the video component after the player selects to play another video
+    forceRerender() {
+      console.log("toggleVideo")
+      this.toggleVideo += 1;  
     }
   },
 
@@ -54,7 +65,8 @@ export default {
 
   data: () => {
     return {
-      isEnrolled: false
+      isEnrolled: false,
+      toggleVideo: 0,
     };
   }
 };

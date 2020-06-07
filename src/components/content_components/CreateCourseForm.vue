@@ -95,7 +95,7 @@ export default {
 
   watch: {
     getAllCoursesTitles() {
-      this.$router.push('/')
+      this.$router.push({ name: 'Home' })
     }
   },
 

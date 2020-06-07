@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/public/Home.vue'
 import Login from '../views/public/Login.vue'
 import Register from '../views/public/Register.vue'
+import Error404 from '../views/public/Error404.vue'
 
 import CreateCourse from '../views/admins/CreateCourse.vue'
 import EditCourse from '../views/admins/EditCourse.vue'
@@ -54,6 +55,11 @@ Vue.use(VueRouter)
     path: '/play-video/:courseTitle/:lectureTitle',
     name: 'PlayVideo',
     component: PlayVideo
+  },
+  {
+    path: '*',
+    name: 'Error404',
+    component: Error404
   },
 ]
 

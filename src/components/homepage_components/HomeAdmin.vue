@@ -50,7 +50,6 @@
 import Title from '@/components/.helpers/Title.vue'
 
 import { mapGetters } from 'vuex'
-import CreateCourse from '@/views/admins/CreateCourse.vue'
 
 export default {
     name: 'HomeAdmin',
@@ -67,13 +66,13 @@ export default {
 
     methods: {
         navigateToCreatingCourse() {
-            this.$router.push(CreateCourse)
+            this.$router.push({name: 'CreateCourse'})
         },
         navigateToEditingCourse(title) {
-            this.$router.push('/edit-course/'+title)
+            this.$router.push({name: 'EditCourse', params: {title: title}})
         },
         navigateAddingLectures(title) {
-            this.$router.push('/lecture-panel/'+title)
+            this.$router.push({name: 'LecturePanel', params: {courseTitle: title}})
         }
     }
 }

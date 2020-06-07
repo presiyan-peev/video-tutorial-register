@@ -53,7 +53,18 @@ export default {
       this.lectures = this.getLecturesByTitle(this.courseTitle);
     },
     navigatePlayingLecture(title) {
-      this.$router.push(`/play-video/${this.courseTitle}/${title}`)
+      /**
+       * trqq zema i ID za da go polzvam da GET videoto v LectureVideo.vue
+       */
+      this.$router.push({ name: 'PlayVideo', params: { courseTitle: this.courseTitle, lectureTitle: title}})
+    }
+  },
+
+  watch: {
+    $route(to, from) {
+      console.log(to)
+      console.log(from)
+      this.$emit('request-another-video')
     }
   },
 

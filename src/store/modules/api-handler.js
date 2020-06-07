@@ -4,6 +4,8 @@ export default {
   state: {
     courses: [],
     lectures: [],
+
+    playingLecture: {},
   },
   getters: {
 
@@ -66,6 +68,10 @@ export default {
       const lectureIndex = state.lectures.findIndex(x => x.title === val)
       state.lectures.splice(lectureIndex, 1)
     },
+/* 
+    PLAY_LECTURE(state, val) {
+      state.playingLecture = state.lectures.filter(x => x.course.toLowerCase() == val.toLowerCase()).find(x => x.title == val.lecture)
+    }, */
 
     FETCH_LECTURES(state, val) {
       state.lectures.push(val)

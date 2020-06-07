@@ -113,7 +113,7 @@ export default {
 
   watch: {
     getAllCourses() {
-      this.$router.push('/')
+      this.$router.push({ name: 'Home' })
     }
   },
 
